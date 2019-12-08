@@ -9,7 +9,9 @@ with open(filepath) as fp:
     code = fp.readline().split(',')
     print(code)
 
-
+    ## TO EASY TO MAKE A WHILE LOOP
+    code[1] = 42
+    code[2] = 59
 
     cursor = 0
     target = 0
@@ -28,8 +30,10 @@ with open(filepath) as fp:
             elif opcode == 2:
                 sum = inputA * inputB
             elif opcode == 99:
+                print()
                 print ("#################################")
-                print (code)
+                print (code[0])
+                print ("#################################")
                 break
             else:
                 raise RuntimeError("Wrong opcode:" + opcode)
@@ -40,5 +44,6 @@ with open(filepath) as fp:
             print("<>", opcode, inputA, inputB, target)
             break
         cursor += 4
-    print("=")
-    print(code)
+    print()
+    print("=FINISH=")
+
